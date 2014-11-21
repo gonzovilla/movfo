@@ -17,7 +17,7 @@ angular.module("pelis").service("ApiService", function($http) {
 
     this.obtenerDatosApi = function (path){
 
-        return $http.get("https://api.themoviedb.org/3/" + path + "?api_key=826b523c417cbb888744b13031d846c2&language=es");
+        return $http.get("https://api.themoviedb.org/3/" + path + "?api_key=f92d87b3e9965ef08561a0d67898000d&language=es");
 
     };
 
