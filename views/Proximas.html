@@ -2,15 +2,9 @@
 
 <table class="table table-striped">
     <tbody>
-        <tr ng-repeat="pelicula in peliculas">
-            <td>
-                <img ng-src="{{ obtenerRutaImagen(pelicula.backdrop_path)  }}" />
-            </td>
-            <td> <a href="" ng-click="verDetalle(pelicula.id)">
-                {{ pelicula.original_title }}
-            </a> </td>
-            <td> {{ pelicula.release_date }} </td>
-        </tr>
+        <list-item ng-repeat="pelicula in peliculas" peli="pelicula" al-seleccionar="verDetalle(itemId)">
+
+        </list-item>
     </tbody>
 </table>
 

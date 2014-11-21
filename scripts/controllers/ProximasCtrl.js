@@ -5,7 +5,7 @@
 
 angular
     .module("pelis")
-    .controller("ProximasCtrl", function($scope, $http, ApiService, Peliculas, $location){
+    .controller("ProximasCtrl", function($scope, $http, ApiService, Peliculas, $location, $filter){
 
 
         $scope.peliculas = Peliculas.data.results;
@@ -18,18 +18,21 @@ angular
           }
         );*/
 
-        $scope.obtenerRutaImagen = function(path) {
-
-            return ApiService.rutaImagen(path, 300);
-
-        };
-
         $scope.verDetalle = function(id) {
 
             $location.path("/pelis/detalle").search({
                 peliculaId: id
             });
 
+        };
+
+        $scope.aplicaFiltroFecha = function(fecha) {
+
+            return $filter("fechaEstreno")(nombre(fecha));
+        };
+
+        var nombre = function (fecha) {
+            return $filter("date")(fecha);
         };
 
         /* function diferido() {
